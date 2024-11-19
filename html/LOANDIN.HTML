@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Link de Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+    <!-- Link de Font Awesome para icono de WhatsApp -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencia Vial</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #FF6600;
+        }
+        /* Encabezado */
+        header {
+            background-color: #010130;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        header img {
+            height: 50px;
+        }
+        header nav a {
+            color: white;
+            margin: 0 1rem;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #FF6600;
+        }
+        /* Botón */
+        .button {
+            background-color: #FF6600;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #e65c00;
+        }
+        /* Hero Section */
+        .hero {
+            background: url('imagen/20d4a33cec34cb4f7bcd3e0957cc1db0.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+        /* Servicios */
+        .services {
+            background-color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2.5rem;
+            color: #010130;
+            margin-bottom: 2rem;
+        }
+        .service-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .service {
+            width: 200px;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, opacity 0.3s;
+        }
+        .service:hover {
+            transform: translateY(-5px);
+            opacity: 0.9;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .service img {
+            width: 80px;
+            margin-bottom: 1rem;
+        }
+        .service p {
+            font-size: 1.1rem;
+            color: #333;
+            font-weight: bold;
+        }
+        /* Beneficios */
+        .benefits {
+            background-color: #f4f4f4;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .benefits h2 {
+            font-size: 2.5rem;
+            color: #010130;
+            margin-bottom: 2rem;
+        }
+        .benefits-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .benefit {
+            width: 250px;
+            padding: 1.5rem;
+            background-color: #FFF;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .benefit:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .benefit i {
+            font-size: 2rem;
+            color: #FF6600;
+            margin-bottom: 1rem;
+        }
+        /* Formulario de Contacto */
+        .contact {
+            background-color: #010130;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .contact form {
+            max-width: 500px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .contact input, .contact textarea {
+            padding: 0.8rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+        .contact .button {
+            margin-top: 1rem;
+        }
+        /* Footer */
+        footer {
+            background-color: #010130;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+        }
+        footer a {
+            color: #FF6600;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: white;
+        }
+        /* Botón de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 100;
+        }
+        .whatsapp-icon {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <img src="imagen/GoAsistencia.png" alt="Logo Asistencia Vial">
+        <nav>
+            <a href="#servicios">Servicios</a>
+            <a href="#beneficios">Beneficios</a>
+            <a href="#contacto">Contáctanos</a>
+        </nav>
+        <a href="#contacto" class="button">¡Obtén Asistencia!</a>
+    </header>
+
+    <!-- Sección Principal -->
+    <section class="hero">
+        <h1>Estamos aquí para ayudarte en el camino</h1>
+        <p>Tu seguridad es nuestra prioridad. Desde pinchazos hasta fallas mecánicas, estamos aquí para ayudarte.</p>
+        <a href="#contacto" class="button">Solicita Ayuda Ahora</a>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="service-list">
+            <div class="service">
+                <img src="imagen/20790.png" alt="Servicio de grúa">
+                <p>Cerrajería</p>
+            </div>
+            <div class="service">
+                <img src="imagen/710296.png" alt="Abastecimiento de combustible">
+                <p>Entrega de combustible</p>
+            </div>
+            <div class="service">
+                <img src="imagen/91690.png" alt="Cambio de neumático">
+                <p>Cambio de neumáticos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section id="beneficios" class="benefits">
+        <h2>¿Por qué Elegirnos?</h2>
+        <div class="benefits-list">
+            <div class="benefit">
+                <i class="bi bi-clock-fill"></i>
+                <p>Disponibilidad 24/7 para ayudarte en cualquier momento.</p>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-people-fill"></i>
+                <p>Profesionales capacitados para resolver problemas de manera rápida y eficaz.</p>
+            </div>
+            <div class="benefit">
+                <i class="bi bi-currency-dollar"></i>
+                <p>Tarifas claras y competitivas sin cargos ocultos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section id="contacto" class="contact">
+        <h2>Contáctanos</h2>
+        <form>
+            <input type="text" name="nombre" placeholder="Nombre Completo" required>
+            <input type="email" name="email" placeholder="Correo Electrónico" required>
+            <textarea name="mensaje" rows="4" placeholder="Escribe tu mensaje..." required></textarea>
+            <button type="submit" class="button">Enviar Mensaje</button>
+        </form>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2024 GO-ASISTENCIA - Todos los derechos reservados</p>
+        <div>
+            <a href="#">Facebook</a> |
+            <a href="#">Instagram</a> |
+            <a href="#">Twitter</a>
+        </div>
+        <p><a href="#">Política de Privacidad</a> | <a href="#">Términos y Condiciones</a></p>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/62143321" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp whatsapp-icon"></i>
+    </a>
+
+</body>
+</html>
+
+
+
